@@ -10,7 +10,10 @@ import UIKit
 
 class HomeViewContoller: UIViewController  {
     
+    let viewModel = HomeViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getAllCountries()
     }
 }

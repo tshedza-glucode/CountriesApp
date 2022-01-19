@@ -10,6 +10,7 @@
 		5829B1A5279823360020898E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829B1A4279823360020898E /* HomeViewModel.swift */; };
 		5829B1A72798235E0020898E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829B1A62798235E0020898E /* SearchViewModel.swift */; };
 		5829B1A9279823940020898E /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829B1A8279823940020898E /* FavoritesViewModel.swift */; };
+		5829B1AC279825400020898E /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5829B1AB279825400020898E /* ResponseModel.swift */; };
 		584C0E432796B43E001485FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C0E422796B43E001485FD /* AppDelegate.swift */; };
 		584C0E452796B43E001485FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C0E442796B43E001485FD /* SceneDelegate.swift */; };
 		584C0E4A2796B43E001485FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 584C0E482796B43E001485FD /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		5829B1A4279823360020898E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		5829B1A62798235E0020898E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		5829B1A8279823940020898E /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		5829B1AB279825400020898E /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		584C0E3F2796B43E001485FD /* Countries App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Countries App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		584C0E422796B43E001485FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		584C0E442796B43E001485FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5829B1AA279825240020898E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5829B1AB279825400020898E /* ResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		584C0E362796B43E001485FD = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		584C0E412796B43E001485FD /* Countries App */ = {
 			isa = PBXGroup;
 			children = (
+				5829B1AA279825240020898E /* Models */,
 				584C0E7D2796EEE1001485FD /* Delegates */,
 				584C0E7A2796EE72001485FD /* Home */,
 				584C0E7B2796EE84001485FD /* Search */,
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				584C0E772796ED8F001485FD /* SearchViewController.swift in Sources */,
+				5829B1AC279825400020898E /* ResponseModel.swift in Sources */,
 				5829B1A72798235E0020898E /* SearchViewModel.swift in Sources */,
 				5829B1A9279823940020898E /* FavoritesViewModel.swift in Sources */,
 				5829B1A5279823360020898E /* HomeViewModel.swift in Sources */,
