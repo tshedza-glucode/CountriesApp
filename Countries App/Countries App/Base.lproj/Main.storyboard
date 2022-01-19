@@ -11,7 +11,6 @@
         <!--Navigation Controller-->
         <scene sceneID="t1T-OX-f6X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ChK-mT-cDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="fh2-FU-USo" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="search" id="516-qR-KZ1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3sr-SP-mxI">
@@ -22,6 +21,7 @@
                         <segue destination="pCt-YQ-pfx" kind="relationship" relationship="rootViewController" id="wm9-vw-DvM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChK-mT-cDD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-431" y="90"/>
         </scene>
@@ -47,7 +47,6 @@
         <!--Home-->
         <scene sceneID="uKO-vO-vo1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="srT-am-q87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="JVV-rz-e5p" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="oGQ-dS-IGk"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Vp-3B-PzI">
@@ -58,6 +57,7 @@
                         <segue destination="D4g-qi-aNc" kind="relationship" relationship="rootViewController" id="IXP-wY-SBx"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srT-am-q87" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1416" y="107"/>
         </scene>
@@ -91,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjC-mq-26c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-411" y="921"/>
+            <point key="canvasLocation" x="-431" y="921"/>
         </scene>
         <!--Favorites-->
         <scene sceneID="f5r-gu-n9z">
@@ -112,7 +112,6 @@
         <!--Navigation Controller-->
         <scene sceneID="fLH-OV-Laz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8e-Od-vW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="Q9K-XE-b6h" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="I1a-Dc-5wY"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hg3-dg-Yxr">
@@ -123,6 +122,7 @@
                         <segue destination="8XM-m0-odt" kind="relationship" relationship="rootViewController" id="eBQ-cz-GDz"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q8e-Od-vW7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="482" y="107"/>
         </scene>
