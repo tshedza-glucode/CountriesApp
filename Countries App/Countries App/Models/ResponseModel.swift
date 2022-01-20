@@ -8,10 +8,12 @@
 import Foundation
 
 struct CountryData: Codable {
-    var name: String
-    var alpha2Code: String
-    var region: String
-    var population: Int
+    var name: String?
+    var alpha2Code: String?
+    var region: String?
+    var capital: String?
+    var population: Int?
+    var currencies: [Currency]?
 }
 
 struct Currency: Codable {

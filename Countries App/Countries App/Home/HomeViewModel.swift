@@ -18,9 +18,9 @@ class HomeViewModel {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data {
                     do {
-                    self.countriesList = try JSONDecoder().decode([CountryData].self, from: data)
+                        self.countriesList = try JSONDecoder().decode([CountryData].self, from: data)
                     } catch {
-                       // print("Error: \(error.localizedDescription)")
+                        // print("Error: \(error.localizedDescription)")
                         print(String(describing: error))
                     }
                 }

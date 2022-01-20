@@ -8,6 +8,25 @@
 import Foundation
 import UIKit
 
+class LocationManager{
+    
+    static let shared = LocationManager()
+    
+    var locationGranted = true
+    //Initializer access level change now
+    private init(){}
+    
+    func requestForLocation(){
+        //Code Process
+        locationGranted = true
+        print("Location granted")
+    }
+    
+}
+//Access class function in a single line
+//LocationManager.shared.requestForLocation()
+
+
 class HomeViewContoller: UIViewController  {
     
     let viewModel = HomeViewModel()
@@ -15,5 +34,8 @@ class HomeViewContoller: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getAllCountries()
+        print(LocationManager.shared.locationGranted)
+        let n = Int.random(in: 0...249)
+        print("Random Number = \(n)")
     }
 }
