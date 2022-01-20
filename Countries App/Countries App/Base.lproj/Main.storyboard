@@ -68,14 +68,50 @@
                     <view key="view" contentMode="scaleToFill" id="Eb4-lr-KpH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BB5-hU-bc5">
+                                <rect key="frame" x="0.0" y="44" width="320" height="148.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="SAFlag" translatesAutoresizingMaskIntoConstraints="NO" id="Ws4-vT-pb4">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="118.5"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="South Africa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-wk-oe7">
+                                        <rect key="frame" x="0.0" y="118.5" width="320" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Htv-wk-oe7" firstAttribute="centerX" secondItem="BB5-hU-bc5" secondAttribute="centerX" id="1OR-tv-ltZ"/>
+                                    <constraint firstItem="Htv-wk-oe7" firstAttribute="top" secondItem="Ws4-vT-pb4" secondAttribute="bottom" id="5Or-28-dio"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-j3-HLv">
+                                <rect key="frame" x="0.0" y="201" width="320" height="367"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gXw-Gg-xnd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zf4-j3-HLv" firstAttribute="top" secondItem="BB5-hU-bc5" secondAttribute="bottom" constant="8.5" id="2b8-a1-Lq6"/>
+                            <constraint firstItem="BB5-hU-bc5" firstAttribute="leading" secondItem="Eb4-lr-KpH" secondAttribute="leading" id="8rf-he-noT"/>
+                            <constraint firstAttribute="trailing" secondItem="zf4-j3-HLv" secondAttribute="trailing" id="Hem-eb-hFI"/>
+                            <constraint firstAttribute="trailing" secondItem="BB5-hU-bc5" secondAttribute="trailing" id="OhN-LH-w8Y"/>
+                            <constraint firstItem="zf4-j3-HLv" firstAttribute="leading" secondItem="Eb4-lr-KpH" secondAttribute="leading" id="Wza-9U-dOd"/>
+                            <constraint firstAttribute="bottom" secondItem="zf4-j3-HLv" secondAttribute="bottom" id="c6w-Va-Jei"/>
+                            <constraint firstItem="BB5-hU-bc5" firstAttribute="top" secondItem="gXw-Gg-xnd" secondAttribute="top" id="lpu-pJ-5F2"/>
+                            <constraint firstItem="gXw-Gg-xnd" firstAttribute="bottom" secondItem="BB5-hU-bc5" secondAttribute="bottom" constant="326.5" id="wwg-l6-GKd"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="XcB-uE-Raq"/>
+                    <navigationItem key="navigationItem" title="Home" id="XcB-uE-Raq">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="5Mv-Ah-xii"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Uy-Vy-TH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1418" y="921"/>
+            <point key="canvasLocation" x="-1419.375" y="920.07042253521126"/>
         </scene>
         <!--Search-->
         <scene sceneID="fPb-fs-4kf">
@@ -120,14 +156,26 @@
                     <view key="view" contentMode="scaleToFill" id="sDE-W6-DRT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qg7-hP-tHL">
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="A6u-q3-5iR"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qg7-hP-tHL" firstAttribute="top" secondItem="A6u-q3-5iR" secondAttribute="top" id="1pt-Hx-zEs"/>
+                            <constraint firstAttribute="bottom" secondItem="qg7-hP-tHL" secondAttribute="bottom" id="9SB-mP-Prw"/>
+                            <constraint firstAttribute="trailing" secondItem="qg7-hP-tHL" secondAttribute="trailing" id="EKa-Rg-xSz"/>
+                            <constraint firstItem="qg7-hP-tHL" firstAttribute="leading" secondItem="sDE-W6-DRT" secondAttribute="leading" id="dTK-di-or6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="RJu-Be-YmZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQt-xN-G9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="482" y="922"/>
+            <point key="canvasLocation" x="481.875" y="921.12676056338034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fLH-OV-Laz">
@@ -148,12 +196,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SAFlag" width="2560" height="1709"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
