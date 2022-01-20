@@ -22,6 +22,7 @@
 		584C0E752796ED4A001485FD /* HomeViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C0E742796ED4A001485FD /* HomeViewContoller.swift */; };
 		584C0E772796ED8F001485FD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C0E762796ED8F001485FD /* SearchViewController.swift */; };
 		584C0E792796EDB1001485FD /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C0E782796EDB1001485FD /* FavoriteViewController.swift */; };
+		58E5EE982799619D004DF70E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E5EE972799619D004DF70E /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		584C0E742796ED4A001485FD /* HomeViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewContoller.swift; sourceTree = "<group>"; };
 		584C0E762796ED8F001485FD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		584C0E782796EDB1001485FD /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		58E5EE972799619D004DF70E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		584C0E412796B43E001485FD /* Countries App */ = {
 			isa = PBXGroup;
 			children = (
+				58E5EE9627995F14004DF70E /* Network */,
 				5829B1AA279825240020898E /* Models */,
 				584C0E7D2796EEE1001485FD /* Delegates */,
 				584C0E7A2796EE72001485FD /* Home */,
@@ -183,6 +186,14 @@
 				584C0E442796B43E001485FD /* SceneDelegate.swift */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		58E5EE9627995F14004DF70E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				58E5EE972799619D004DF70E /* Service.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +334,7 @@
 				5829B1A5279823360020898E /* HomeViewModel.swift in Sources */,
 				584C0E752796ED4A001485FD /* HomeViewContoller.swift in Sources */,
 				584C0E432796B43E001485FD /* AppDelegate.swift in Sources */,
+				58E5EE982799619D004DF70E /* Service.swift in Sources */,
 				584C0E792796EDB1001485FD /* FavoriteViewController.swift in Sources */,
 				584C0E452796B43E001485FD /* SceneDelegate.swift in Sources */,
 			);

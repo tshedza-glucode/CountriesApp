@@ -10,3 +10,4 @@ import Foundation
 class SearchViewModel {
     
 }
+
