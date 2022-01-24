@@ -14,10 +14,17 @@ struct CountryData: Codable {
     var capital: String?
     var population: Int?
     var currencies: [Currency]?
+    var borders: [String]?
+    var flags: Flag?
 }
 
 struct Currency: Codable {
     var code: String?
     var name: String?
     var symbol: String?
+}
+
+struct Flag: Codable {
+    var svg: String?
+    var png: String?
 }
