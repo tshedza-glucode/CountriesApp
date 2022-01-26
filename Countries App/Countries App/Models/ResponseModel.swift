@@ -10,9 +10,12 @@ import Foundation
 struct CountryData: Codable {
     var name: String?
     var alpha2Code: String?
+    var subregion: String?
     var region: String?
     var capital: String?
     var population: Int?
+    var area: Double?
+    var languages: [Language]?
     var currencies: [Currency]?
     var borders: [String]?
     var flags: Flag?
@@ -27,4 +30,9 @@ struct Currency: Codable {
 struct Flag: Codable {
     var svg: String?
     var png: String?
+}
+
+struct Language: Codable {
+    var name: String?
+    var nativeName: String?
 }

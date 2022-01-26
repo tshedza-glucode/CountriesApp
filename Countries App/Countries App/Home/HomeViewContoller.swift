@@ -8,36 +8,78 @@
 import Foundation
 import UIKit
 
-
 class HomeViewContoller: UIViewController  {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
-    
+
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stackView.spacing = 15.0
         scrollView.backgroundColor = .gray
+        fetchData()
+    }
+    
+    func fetchData() {
+        showLoadingState()
+        viewModel.fetchData { [weak self] error in
+            if error == nil {
+                self?.handleSuccess()
+            } else {
+                // Handle failure
+            }
+        }
+    }
+    
+    func handleSuccess() {
+        clearStackView()
         addHeaderView()
-        addDetailsView()
-        addDetailsView()
-        addDetailsView()
-        addDetailsView()
-        addDetailsView()
-        addDetailsView()
+        addGenralDetailsView()
+        addLanguagesView()
+        addBordersDetailsView()
+    }
+    
+    func showLoadingState() {
+        clearStackView()
+        for _ in 0...4 {
+            addLoadingView()
+        }
+    }
+    
+    func addLoadingView() {
+        guard let view = SimpleGradientLoadingView.loadView() else { return }
+        stackView.addArrangedSubview(view)
+    }
+    
+    func clearStackView() {
+        for view in stackView.subviews {
+            view.removeFromSuperview()
+        }
     }
     
     func addHeaderView() {
         guard let view = CountriesHeaderView.loadView() else { return }
-        view.setupView(imageName: "SAFlag", countryName: "SA")
+        view.setupView(header: viewModel.countryHeader )
         stackView.addArrangedSubview(view)
     }
     
-    func addDetailsView() {
+    func addGenralDetailsView() {
         guard let view = CountriesDetailsView.loadView() else { return }
-        view.setupView(headerTitle: "Header", details:["SA", "Zim", "ALG"] )
+        view.setupView(details: viewModel.generalDetails)
+        stackView.addArrangedSubview(view)
+    }
+    
+    func addLanguagesView() {
+        guard let view = CountriesDetailsView.loadView() else { return }
+        view.setupView(details: viewModel.languages)
+        stackView.addArrangedSubview(view)
+    }
+    
+    func addBordersDetailsView() {
+        guard let view = CountriesDetailsView.loadView() else { return }
+        view.setupView(details: viewModel.borderDetails)
         stackView.addArrangedSubview(view)
     }
 }

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SimpleGradientLoadingView" customModule="Countries_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="455" height="202"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nth-rJ-3ac" customClass="GradientView" customModule="Countries_App" customModuleProvider="target">
+                    <rect key="frame" x="20" y="25" width="75" height="75"/>
+                    <color key="backgroundColor" name="productSecondary"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="8Yl-YH-csb"/>
+                        <constraint firstAttribute="width" secondItem="Nth-rJ-3ac" secondAttribute="height" multiplier="1:1" id="dTe-Uf-8ga"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bTD-ab-sI4">
+                    <rect key="frame" x="120" y="32.5" width="315" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oV0-lx-Ca5" customClass="GradientView" customModule="Countries_App" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="25"/>
+                            <color key="backgroundColor" name="productSecondary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="6Q4-MZ-ZRJ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9WS-O3-WE3" customClass="GradientView" customModule="Countries_App" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="35" width="315" height="25"/>
+                            <color key="backgroundColor" name="productSecondary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="zy9-SU-YQM"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="bTD-ab-sI4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="0Zz-qp-1SC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="bTD-ab-sI4" secondAttribute="bottom" constant="25" id="28B-rg-MZm"/>
+                <constraint firstItem="Nth-rJ-3ac" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="5Y7-dF-Kwa"/>
+                <constraint firstItem="bTD-ab-sI4" firstAttribute="centerY" secondItem="Nth-rJ-3ac" secondAttribute="centerY" id="AxW-cY-Rcw"/>
+                <constraint firstItem="Nth-rJ-3ac" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="SId-hY-wqA"/>
+                <constraint firstItem="bTD-ab-sI4" firstAttribute="leading" secondItem="Nth-rJ-3ac" secondAttribute="trailing" constant="25" id="XhU-xH-awv"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nth-rJ-3ac" secondAttribute="bottom" constant="25" id="iIx-dM-qR0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bTD-ab-sI4" secondAttribute="trailing" constant="20" id="rJA-5d-oEG"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="firstLabelPlaceholder" destination="oV0-lx-Ca5" id="mbu-zC-mXA"/>
+                <outlet property="imagePlaceholderView" destination="Nth-rJ-3ac" id="oa9-yg-nB3"/>
+                <outlet property="secondLabelPlaceholder" destination="9WS-O3-WE3" id="37u-x9-cc3"/>
+            </connections>
+            <point key="canvasLocation" x="181.8840579710145" y="331.47321428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="productSecondary">
+            <color red="0.16470588235294117" green="0.16470588235294117" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

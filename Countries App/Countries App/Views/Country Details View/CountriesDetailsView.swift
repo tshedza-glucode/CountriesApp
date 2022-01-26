@@ -19,13 +19,13 @@ class CountriesDetailsView: UIView, NibLoadable {
 
     func styling() {
         self.layer.cornerRadius = 10
-        self.backgroundColor =  .blue
+        self.backgroundColor =  .white
         headerLabel.font = .systemFont(ofSize: 20, weight: .bold)
     }
     
-    func setupView(headerTitle: String, details: [String]) {
-        headerLabel.text = headerTitle
-        addDetails(details)
+    func setupView(details: CountryDetails) {
+        headerLabel.text = details.header
+        addDetails(details.details)
     }
     
     func addDetails(_ details: [String]) {

@@ -135,44 +135,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="410-NH-lyb">
-                                <rect key="frame" x="0.0" y="44" width="320" height="51"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cv5-I3-eyv">
-                                <rect key="frame" x="0.0" y="95" width="320" height="473"/>
+                                <rect key="frame" x="0.0" y="102" width="320" height="466"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="COUNTRY_CELL" id="qBd-Ts-beB" customClass="CountryTableViewCell" customModule="Countries_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="COUNTRY_CELL" rowHeight="64" id="qBd-Ts-beB" customClass="CountryTableViewCell" customModule="Countries_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qBd-Ts-beB" id="76C-id-bFa">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXt-nA-WKj">
-                                                    <rect key="frame" x="35" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eEj-V2-EdD" customClass="CountryView" customModule="Countries_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="eEj-V2-EdD" firstAttribute="top" secondItem="76C-id-bFa" secondAttribute="top" id="HAX-LF-MZb"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="eEj-V2-EdD" secondAttribute="bottom" id="CYJ-Um-AjO"/>
+                                            <constraint firstItem="eEj-V2-EdD" firstAttribute="leading" secondItem="qBd-Ts-beB" secondAttribute="leading" id="QXJ-3t-SIF"/>
+                                            <constraint firstItem="76C-id-bFa" firstAttribute="top" secondItem="qBd-Ts-beB" secondAttribute="top" id="UZQ-MA-O4D"/>
+                                            <constraint firstAttribute="trailing" secondItem="eEj-V2-EdD" secondAttribute="trailing" id="lWx-ae-SO6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="countryView" destination="eEj-V2-EdD" id="H3h-T5-bdx"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="410-NH-lyb">
+                                <rect key="frame" x="0.0" y="51" width="320" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pCt-YQ-pfx" id="7YK-VA-psS"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rWF-m1-yc2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cv5-I3-eyv" firstAttribute="leading" secondItem="wmi-tb-YZX" secondAttribute="leading" id="5sg-go-Kkq"/>
-                            <constraint firstItem="410-NH-lyb" firstAttribute="centerX" secondItem="wmi-tb-YZX" secondAttribute="centerX" id="KTw-6d-mub"/>
-                            <constraint firstItem="cv5-I3-eyv" firstAttribute="top" secondItem="410-NH-lyb" secondAttribute="bottom" id="OeA-57-nXT"/>
-                            <constraint firstItem="410-NH-lyb" firstAttribute="leading" secondItem="rWF-m1-yc2" secondAttribute="leading" id="UVu-9I-TB9"/>
-                            <constraint firstItem="410-NH-lyb" firstAttribute="top" secondItem="rWF-m1-yc2" secondAttribute="top" id="hU3-RX-Egf"/>
-                            <constraint firstAttribute="bottom" secondItem="cv5-I3-eyv" secondAttribute="bottom" id="sbN-uY-gvd"/>
-                            <constraint firstAttribute="trailing" secondItem="cv5-I3-eyv" secondAttribute="trailing" id="taf-Qi-9fm"/>
+                            <constraint firstItem="cv5-I3-eyv" firstAttribute="top" secondItem="410-NH-lyb" secondAttribute="bottom" id="S6D-A1-6Fm"/>
+                            <constraint firstAttribute="bottom" secondItem="cv5-I3-eyv" secondAttribute="bottom" id="WMc-L1-G85"/>
+                            <constraint firstItem="410-NH-lyb" firstAttribute="top" secondItem="rWF-m1-yc2" secondAttribute="top" constant="7" id="dlb-kH-k1H"/>
+                            <constraint firstAttribute="trailing" secondItem="410-NH-lyb" secondAttribute="trailing" id="dzi-8d-iDV"/>
+                            <constraint firstAttribute="trailing" secondItem="cv5-I3-eyv" secondAttribute="trailing" id="kRg-oV-4ng"/>
+                            <constraint firstItem="cv5-I3-eyv" firstAttribute="leading" secondItem="wmi-tb-YZX" secondAttribute="leading" id="n2m-Ps-NTI"/>
+                            <constraint firstItem="410-NH-lyb" firstAttribute="leading" secondItem="wmi-tb-YZX" secondAttribute="leading" id="w5e-Wr-SwN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="T9q-UI-sN3"/>
