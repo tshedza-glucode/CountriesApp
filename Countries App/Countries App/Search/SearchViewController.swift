@@ -37,7 +37,6 @@ extension SearchViewContoller: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.coutriesListNumber
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +48,7 @@ extension SearchViewContoller: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //   viewModel.countriesList?[indexPath.row]
+        viewModel.countriesList?[indexPath.row]
     }
 }
 
@@ -61,7 +60,6 @@ extension SearchViewContoller: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         countriesTableView.reloadData()
     }
-    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
     {

@@ -78,8 +78,10 @@ class HomeViewContoller: UIViewController  {
     }
     
     func addBordersDetailsView() {
+        if !viewModel.borderDetails.details.isEmpty {
         guard let view = CountriesDetailsView.loadView() else { return }
         view.setupView(details: viewModel.borderDetails)
-        stackView.addArrangedSubview(view)
+            stackView.addArrangedSubview(view)
+        }
     }
 }
