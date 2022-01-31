@@ -12,13 +12,15 @@ class HomeViewContoller: UIViewController  {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
-
+    @IBOutlet weak var favoritesButton: UIBarButtonItem!
+    
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stackView.spacing = 15.0
         scrollView.backgroundColor = .gray
+        favoritesButton.tintColor = .yellow
         fetchData()
     }
     
@@ -26,14 +28,15 @@ class HomeViewContoller: UIViewController  {
         showLoadingState()
         viewModel.fetchData { [weak self] error in
             if error == nil {
-                self?.handleSuccess()
+                self?.updateData()
             } else {
                 // Handle failure
             }
         }
     }
     
-    func handleSuccess() {
+    func updateData() {
+        favoritesButton.image = viewModel.rightBarButtonImage()
         clearStackView()
         addHeaderView()
         addGenralDetailsView()
@@ -79,9 +82,19 @@ class HomeViewContoller: UIViewController  {
     
     func addBordersDetailsView() {
         if !viewModel.borderDetails.details.isEmpty {
-        guard let view = CountriesDetailsView.loadView() else { return }
-        view.setupView(details: viewModel.borderDetails)
+            guard let view = CountriesDetailsView.loadView() else { return }
+            view.setupView(details: viewModel.borderDetails)
             stackView.addArrangedSubview(view)
         }
+    }
+    
+    func update(with country: CountryData?) {
+        viewModel.countryResponse = country
+        updateData()
+    }
+    
+    @IBAction private func addToFavoritesTapped(_ sender: Any) {
+        viewModel.updateFavorites()
+        favoritesButton.image = viewModel.rightBarButtonImage()
     }
 }

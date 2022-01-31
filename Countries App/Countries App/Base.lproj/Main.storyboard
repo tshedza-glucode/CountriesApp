@@ -25,10 +25,11 @@
             </objects>
             <point key="canvasLocation" x="-431" y="90"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="iLJ-Sq-Jb1">
             <objects>
-                <tabBarController id="Nuv-gv-dae" sceneMemberID="viewController">
+                <tabBarController id="Nuv-gv-dae" customClass="MainTabBarController" customModule="Countries_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VzF-S9-9jP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qOx-aP-L2j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +65,7 @@
         <!--Home-->
         <scene sceneID="3x6-qk-cew">
             <objects>
-                <viewController id="D4g-qi-aNc" customClass="HomeViewContoller" customModule="Countries_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D4g-qi-aNc" customClass="HomeViewContoller" customModule="Countries_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eb4-lr-KpH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,9 +117,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="XcB-uE-Raq">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="5Mv-Ah-xii"/>
+                        <barButtonItem key="rightBarButtonItem" image="star" catalog="system" style="plain" id="5Mv-Ah-xii">
+                            <connections>
+                                <action selector="addToFavoritesTapped:" destination="D4g-qi-aNc" id="dS3-fa-oAB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favoritesButton" destination="5Mv-Ah-xii" id="qq2-MK-le6"/>
                         <outlet property="scrollView" destination="mN0-mU-CYy" id="3oI-3r-lJO"/>
                         <outlet property="stackView" destination="LER-FD-Ydp" id="zFT-Vn-RYi"/>
                     </connections>
@@ -130,7 +136,7 @@
         <!--Search-->
         <scene sceneID="fPb-fs-4kf">
             <objects>
-                <viewController id="pCt-YQ-pfx" customClass="SearchViewContoller" customModule="Countries_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pCt-YQ-pfx" customClass="SearchViewContoller" customModule="Countries_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmi-tb-YZX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +173,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="410-NH-lyb">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="410-NH-lyb">
                                 <rect key="frame" x="0.0" y="51" width="320" height="51"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -209,28 +215,35 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="COUNTRY_CELL" id="XGn-fS-BOW">
-                                        <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FAVORITE_CELL" rowHeight="75" id="XGn-fS-BOW" customClass="CountryTableViewCell" customModule="Countries_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="320" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XGn-fS-BOW" id="VrF-hI-zVL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iB-P6-7dH">
-                                                    <rect key="frame" x="20" y="10" width="280" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbd-cC-avU" customClass="CountryView" customModule="Countries_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="8iB-P6-7dH" firstAttribute="centerY" secondItem="VrF-hI-zVL" secondAttribute="centerY" id="0VB-oc-Sje"/>
-                                                <constraint firstAttribute="trailing" secondItem="8iB-P6-7dH" secondAttribute="trailing" constant="20" id="4qy-u7-xHR"/>
-                                                <constraint firstItem="8iB-P6-7dH" firstAttribute="leading" secondItem="VrF-hI-zVL" secondAttribute="leading" constant="20" id="7r4-Yy-jJm"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="VrF-hI-zVL" firstAttribute="top" secondItem="XGn-fS-BOW" secondAttribute="top" id="0C4-sb-sNa"/>
+                                            <constraint firstItem="Nbd-cC-avU" firstAttribute="top" secondItem="XGn-fS-BOW" secondAttribute="top" id="1iM-vF-0xd"/>
+                                            <constraint firstAttribute="bottom" secondItem="VrF-hI-zVL" secondAttribute="bottom" id="B2E-NO-5PG"/>
+                                            <constraint firstItem="Nbd-cC-avU" firstAttribute="leading" secondItem="XGn-fS-BOW" secondAttribute="leading" id="IB0-GP-gFF"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nbd-cC-avU" secondAttribute="bottom" id="Ygz-J6-M8e"/>
+                                            <constraint firstItem="VrF-hI-zVL" firstAttribute="leading" secondItem="XGn-fS-BOW" secondAttribute="leading" id="jQE-RR-Yrr"/>
+                                            <constraint firstAttribute="trailing" secondItem="Nbd-cC-avU" secondAttribute="trailing" id="l5V-TZ-cQR"/>
+                                            <constraint firstAttribute="trailing" secondItem="VrF-hI-zVL" secondAttribute="trailing" id="sOL-v2-AX1"/>
+                                        </constraints>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8XM-m0-odt" id="QOm-Ri-4uN"/>
+                                    <outlet property="delegate" destination="8XM-m0-odt" id="GZA-eB-PeB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="A6u-q3-5iR"/>
@@ -243,6 +256,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="RJu-Be-YmZ"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="qg7-hP-tHL" id="jKt-sb-hRB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TQt-xN-G9E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,6 +284,7 @@
     </scenes>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

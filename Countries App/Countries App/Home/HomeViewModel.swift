@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class HomeViewModel {
     
@@ -59,7 +60,7 @@ class HomeViewModel {
     var area: String {
         return "Area: \(String(countryResponse?.area ?? 0.0)) KM^2"
     }
-
+    
     var countryImageURL: String {
         return countryResponse?.flags?.png ?? ""
     }
@@ -82,5 +83,33 @@ class HomeViewModel {
     
     var borderDetails: CountryDetails {
         return CountryDetails(header: "Borders", details: countryResponse?.borders ?? [])
+    }
+    
+    func savefavorite(country: CountryData) {
+        UserDefaults.addToFavorites(country)
+    }
+    
+    func retriveFavorites() -> [CountryData] {
+        return UserDefaults.savedfavorites
+    }
+    
+    func rightBarButtonImage() -> UIImage? {
+        if UserDefaults.isFavorite(countryResponse) {
+            return UIImage(systemName: "star.fill")
+        }
+        return UIImage(systemName: "star")
+    }
+    
+    func updateFavorites() {
+        guard let currentCountry = countryResponse  else { return }
+        if UserDefaults.isFavorite(currentCountry) {
+            removeFromFavorites(country: currentCountry)
+        } else {
+            savefavorite(country: currentCountry)
+        }
+    }
+    
+    func removeFromFavorites(country: CountryData) {
+        UserDefaults.savedfavorites.removeAll(where: { $0.alpha2Code == country.alpha2Code })
     }
 }

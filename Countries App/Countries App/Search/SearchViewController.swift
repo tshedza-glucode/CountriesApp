@@ -13,6 +13,8 @@ class SearchViewContoller: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var countriesTableView: UITableView!
     
+    var delegate: MainTabBarDelegate?
+    
    lazy var viewModel = SearchViewModel()
 
     override func viewDidLoad() {
@@ -48,7 +50,8 @@ extension SearchViewContoller: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.countriesList?[indexPath.row]
+        let selectedCountry =  viewModel.countriesList?[indexPath.row]
+        delegate?.transitionToHomeScreen(with: selectedCountry)
     }
 }
 

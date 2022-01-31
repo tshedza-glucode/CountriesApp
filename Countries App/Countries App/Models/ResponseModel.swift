@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct CountryData: Codable {
+struct CountryData: Codable, Equatable {
+    
+    static func == (lhs: CountryData, rhs: CountryData) -> Bool {
+        return lhs.alpha2Code == rhs.alpha2Code
+    }
+    
     var name: String?
     var alpha2Code: String?
     var subregion: String?

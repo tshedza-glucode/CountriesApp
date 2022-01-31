@@ -9,4 +9,13 @@ import Foundation
 
 class FavoritesViewModel {
     
+    var favoritesList = UserDefaults.savedfavorites
+    
+    var favoriteListCount: Int {
+        return favoritesList.count
+    }
+    
+    func resetFavorites() {
+        favoritesList = UserDefaults.savedfavorites
+    }
 }

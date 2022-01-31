@@ -15,7 +15,7 @@ class CountryView: UIView, NibLoadable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        styling()
+
     }
     
     func styling() {
@@ -23,6 +23,7 @@ class CountryView: UIView, NibLoadable {
     }
     
     func setupView(countryName: String, urlString: String) {
+        styling()
         flagImageView.load(urlString: urlString)
         countryNameLabel.text = countryName
     }
