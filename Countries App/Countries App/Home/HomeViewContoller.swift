@@ -19,8 +19,8 @@ class HomeViewContoller: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         stackView.spacing = 15.0
-        scrollView.backgroundColor = .gray
-        favoritesButton.tintColor = .yellow
+        scrollView.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundC.png") ?? UIImage())
+        favoritesButton.tintColor = .blue
         fetchData()
     }
     
@@ -30,7 +30,7 @@ class HomeViewContoller: UIViewController  {
             if error == nil {
                 self?.updateData()
             } else {
-                // Handle failure
+                self?.showFailureScreen()
             }
         }
     }
@@ -86,6 +86,13 @@ class HomeViewContoller: UIViewController  {
             view.setupView(details: viewModel.borderDetails)
             stackView.addArrangedSubview(view)
         }
+    }
+    
+    func showFailureScreen() {
+        clearStackView()
+        guard let view = CountriesDetailsView.loadView() else { return }
+        view.setupView(details: viewModel.failureMessage)
+        stackView.addArrangedSubview(view)
     }
     
     func update(with country: CountryData?) {

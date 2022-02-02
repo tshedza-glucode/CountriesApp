@@ -17,7 +17,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="MSn-3z-epA">
                     <rect key="frame" x="5" y="5" width="367" height="59"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="SAFlag" translatesAutoresizingMaskIntoConstraints="NO" id="SHE-dT-S66">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="SHE-dT-S66">
                             <rect key="frame" x="0.0" y="0.0" width="70" height="59"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="pWE-SN-TUH"/>
@@ -53,7 +53,6 @@
         </view>
     </objects>
     <resources>
-        <image name="SAFlag" width="2560" height="1709"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

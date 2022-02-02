@@ -31,6 +31,7 @@ class CountriesDetailsView: UIView, NibLoadable {
     func addDetails(_ details: [String]) {
         for detail in details {
             let label = UILabel()
+            label.numberOfLines = 0
             label.text = detail
             detailStackView.addArrangedSubview(label)
         }

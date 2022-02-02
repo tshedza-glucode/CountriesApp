@@ -17,9 +17,9 @@ class FavoriteViewContoller: UIViewController  {
     var viewModel = FavoritesViewModel()
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
-        super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {

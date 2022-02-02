@@ -15,8 +15,8 @@ class SearchViewContoller: UIViewController {
     
     var delegate: MainTabBarDelegate?
     
-   lazy var viewModel = SearchViewModel()
-
+    lazy var viewModel = SearchViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         countriesTableView.delegate = self

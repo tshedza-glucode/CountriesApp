@@ -85,6 +85,10 @@ class HomeViewModel {
         return CountryDetails(header: "Borders", details: countryResponse?.borders ?? [])
     }
     
+    var failureMessage: CountryDetails {
+        return CountryDetails(header: "Warning", details: ["Couldn't retrieve countries at this time,\n Please try again later"])
+    }
+    
     func savefavorite(country: CountryData) {
         UserDefaults.addToFavorites(country)
     }
