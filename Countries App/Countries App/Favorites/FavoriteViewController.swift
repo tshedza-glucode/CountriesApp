@@ -14,6 +14,7 @@ class FavoriteViewContoller: UIViewController  {
     
     var delegate: MainTabBarDelegate?
     
+    @IBOutlet weak var stackView: UIStackView!
     var viewModel = FavoritesViewModel()
     
     override func viewDidLoad() {
@@ -21,11 +22,37 @@ class FavoriteViewContoller: UIViewController  {
         favoritesTableView.delegate = self
         favoritesTableView.dataSource = self
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundC.png") ?? UIImage())
+        setupView()
+    }
+    
+    func showNoFavoriteMessage() {
+        guard let view = CountriesDetailsView.loadView() else { return }
+        view.setupView(details: viewModel.noFavoriteMessage)
+        view.backgroundColor = .white
+        stackView.addArrangedSubview(view)
+    }
+    
+    func setupView() {
         viewModel.resetFavorites()
-        favoritesTableView.reloadData()
+        if viewModel.favoriteListCount == 0 {
+            clearStackView()
+            showNoFavoriteMessage()
+            favoritesTableView.isHidden = true
+        } else {
+            clearStackView()
+            favoritesTableView.isHidden = false
+            favoritesTableView.reloadData()
+        }
+    }
+    
+    func clearStackView() {
+        for view in stackView.subviews {
+            view.removeFromSuperview()
+        }
     }
 }
 

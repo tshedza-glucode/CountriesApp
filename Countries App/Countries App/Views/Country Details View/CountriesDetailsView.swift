@@ -32,6 +32,7 @@ class CountriesDetailsView: UIView, NibLoadable {
         for detail in details {
             let label = UILabel()
             label.numberOfLines = 0
+            label.textAlignment = .center
             label.text = detail
             detailStackView.addArrangedSubview(label)
         }
